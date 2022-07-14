@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Hero from './sections/hero/Hero';
+import About from './sections/about/About';
+import Portfolio from './sections/portfolio/Portfolio';
+import Contact from './sections/contact/Contact';
+import DesktopHeader from './sections/header/DesktopHeader';
+import Footer from './sections/footer/Footer';
+import MobileHeader from './sections/header/MobileHeader';
 
-function App() {
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(param => param !== true);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='dark'>
+      <DesktopHeader toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <MobileHeader />
+      <Hero isDarkMode={isDarkMode} />
+      <About />
+      <Portfolio />
+      <Contact />
+      <Footer />
+    </section>
   );
 }
 
