@@ -15,7 +15,7 @@ const MobileHeader = () => {
                     { toggleMenu ? <CloseOutlinedIcon /> : <MenuOutlinedIcon /> }
                 </section>
             </section>
-            <nav className={`${toggleMenu ? "translate-x-0" : "-translate-x-60"} w-60 bg-red-600 absolute h-screen top-10 z-50 transition duration-1000`}>
+            <nav className={`${toggleMenu ? "translate-x-0" : "-translate-x-60"} w-60 bg-red-600 absolute h-screen top-10 z-50 transition duration-750`}>
                 <a href='/' className="">main</a>
                 <a href='/about' className="">about</a>
                 <a href='/portfolio' className="">portfolio</a> 
